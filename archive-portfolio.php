@@ -13,7 +13,7 @@
 	); 
 	$termlist = get_terms( $args ); 
 	?>
-	<section id="content">
+	<div class="container clearfix" style="margin-top: 1rem;">
 	<ul id="portfolio-filter" class="portfolio-filter clearfix" data-container="#portfolio">
 	   <li class="activeFilter"><a href="#" data-filter="*">Show All</a></li>
 		<?php
@@ -25,7 +25,7 @@
 
 	<?php endforeach; ?> 
 	</ul>
-	</section>
+	</div>
 <!-- Content -->
 	<section id="content">
 		<div class="content-wrap nobottompadding">
