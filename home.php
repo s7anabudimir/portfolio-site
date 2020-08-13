@@ -3,23 +3,18 @@
     <div class="content-wrap">
         <div class="container">
         <?php
-    $args = array(                 
-		'cat' => '1',
-		'hide_empty' => true
-	); 
-    $categorylist = get_terms( $args ); 
-    ?>
+            $categorylist = get_categories( array(
+                'orderby' => 'name',
+                'parent'  => 0
+            ) ); 
+            
+        ?>
     <div class="container">
     <div class="categories">
-        <ul>
-            <li class="js-filter">Show All
-            </li>
-            
-    <?php foreach($categorylist as $ctg) :
-    ?>
-            <li class="js-filter"><a href="<?php get_category_link($ctg->term_id); ?>"><?php echo $ctg->name; ?></a></li>
-    <?php endforeach; ?>
-        </ul>
+        <?php foreach ( $categorylist as $ctg) : ?>
+            <!-- <li data-categories="<?php echo $ctg->term_id; ?>"><a href="<?php echo get_category_link( $ctg->term_id ); ?>"><?php echo $ctg->name; ?></a></li><br /> -->
+            <li class="category-btn" data-categories="<?php echo $ctg->term_id; ?>"><a href="javascript:void(0);"><?php echo $ctg->name; ?></a></li><br />
+        <?php endforeach ?>
     </div>
 </div>
             <div id="posts" class="small-thumbs">
@@ -37,3 +32,26 @@
     </div>
 </section>
 <?php get_footer();  ?>
+<script>
+    (function($) {
+        
+        $( document ).ready(function() {
+            $('.category-btn' ).on('click', function(e) {
+                e.preventDefault();
+                var category = $(this).data('categories');
+                console.log(category);
+                $.ajax({
+                    url: '<?php echo admin_url('admin-ajax.php'); ?>',
+                    type: 'post', 
+                    data: {
+                        action: 'filter',
+                        category: category
+                    },
+                    success: function(result) {
+                        $('#posts').html(result);
+                    }
+                }) ;
+            })
+        })
+    })(jQuery); 
+</script>

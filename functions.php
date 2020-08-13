@@ -3,6 +3,7 @@
 include_once get_theme_file_path( 'functions/class-kirki-installer-section.php' );
 include('functions/customizer.php');
 include('functions/customize-home.php');
+include('functions/ajax.php');
 
 //Register CSS
 function portfolio_css() {
