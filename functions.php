@@ -169,6 +169,8 @@ function portfolio_posttype() {
             'show_in_rest' => false,
             'menu_icon' => 'dashicons-format-image',
             'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
+            'show_in_rest' => true,
+            'rest_base' => 'portfolio'
         )
     );
 }
