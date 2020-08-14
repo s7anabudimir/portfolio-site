@@ -62,8 +62,38 @@ if( have_posts() ):while( have_posts() ):the_post();
 					    </div>
 					<!-- Portfolio Single - Share End -->
 				</div><!-- .portfolio-single-content end -->
+				<div class="clear"></div>
+				<div class="divider divider center">
+					<i class="icon-circle"></i>
+
+					<h4>Related Projects:</h4>
+
+					<div id="related-portfolio" class="owl-carousel portfolio-carousel carousel-widget" data-margin="20" data-nav="false" data-autoplay="5000" data-items-xs="1" data-items-sm="2" data-items-md="3" data-items-xl="4">
+
+						<div class="oc-item">
+							<div class="iportfolio">
+								<div class="portfolio-image">
+									<a href="portfolio-single.html">
+										<img src="images/portfolio/4/1.jpg" alt="Open Imagination">
+									</a>
+									<div class="portfolio-overlay">
+										<a href="images/portfolio/full/1.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+										<a href="portfolio-single.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+									</div>
+								</div>
+								<div class="portfolio-desc">
+									<h3><a href="portfolio-single.html">Open Imagination</a></h3>
+									<span><a href="#">Media</a>, <a href="#">Icons</a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 		</div>
 	</div>
 <?php
 endwhile; else: endif;
+
+
+
 ?>
